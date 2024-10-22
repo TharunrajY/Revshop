@@ -314,8 +314,7 @@ public class ProductController {
 		String gatewayUrl = ServletUriComponentsBuilder.fromCurrentContextPath().scheme(request.getScheme())
 				.host(request.getServerName()).port(request.getServerPort()).path("/seller/SellerDashboard")
 				.toUriString();
-
-		System.out.println("Redirecting to: " + gatewayUrl);
+ 
 
 		// Redirect to the seller dashboard
 		return "redirect:http://localhost:8080/seller/SellerDashboard";
@@ -368,7 +367,7 @@ public class ProductController {
 		return "manageProducts";
 	}
 
-	private Long getBuyerIdFromCookies(HttpServletRequest request) {
+	public Long getBuyerIdFromCookies(HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -385,7 +384,7 @@ public class ProductController {
 		Product product = productService.getProductById(productId);
 		
 		if (product != null) {
-			System.out.println(product);
+			
 			return ResponseEntity.ok(product);
 		} else {
 			return ResponseEntity.notFound().build();

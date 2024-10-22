@@ -41,7 +41,7 @@ public class SellerController {
 
 	private static final Logger logger = LoggerFactory.getLogger(SellerController.class);
 
-	private Long getSellerIdFromCookies(HttpServletRequest request) {
+	public Long getSellerIdFromCookies(HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {

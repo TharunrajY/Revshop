@@ -294,9 +294,15 @@ footer {
 
 .card-text {
 	color: #555;
-	margin-bottom: 1rem;
+    display: -webkit-box; /* Ensure compatibility with webkit-based browsers */
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add "..." for overflowing text */
+    height: 3rem; /* Ensure uniform card height */
+    margin-bottom: 1rem;
+    color: #555;
 }
-
 .btn {
 	background-color: #007bff;
 	color: #fff;
